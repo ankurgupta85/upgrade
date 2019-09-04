@@ -45,10 +45,12 @@ API
 1) Create reservation: 
 
 Request 
+
 curl -i -X POST 'http://localhost:8080/v1/reservations' -d '{"name":"Ankur Gupta", "email":"ankurgupta851@gmail.com", "reservationStartDate":"2019-09-15", "reservationEndDate":"2019-09-17"}' -H 'Content-type: application/json'
 
 
 Response 
+
 {
   "id": 4,
   "email": "ankurgupta851@gmail.com",
@@ -68,9 +70,11 @@ Response
 2) Get reservation
 
 Request 
+
 curl -X GET 'http://localhost:8080/v1/reservations/1' -H 'Content-type: application/json'
 
 Response 
+
 {
   "id": 1,
   "email": "ankurgupta851@gmail.com",
@@ -85,9 +89,11 @@ Response
 }
 
 Request with invalid identifier
+
 curl -X GET 'http://localhost:8080/v1/reservations/101' -H 'Content-type: application/json'
 
 Response 
+
 Reservation does not exists
 
 
@@ -95,6 +101,7 @@ Reservation does not exists
 3) Get all reservations
 
 Request 
+
 curl -X GET 'http://localhost:8080/v1/reservations' -H 'Content-type: application/json'
 
 
@@ -131,18 +138,22 @@ Response
 4) Get availability 
 
 Request 
+
 curl -X GET 'http://localhost:8080/v1/reservations/availability' -H 'Content-type: application/json'
 
 
 Response 
+
 ["2019-09-07","2019-09-08","2019-09-12","2019-09-13","2019-09-14","2019-09-18","2019-09-19","2019-09-20","2019-09-21","2019-09-22","2019-09-23","2019-09-24","2019-09-25","2019-09-26","2019-09-27","2019-09-28","2019-09-29","2019-09-30","2019-10-01","2019-10-02","2019-10-03","2019-10-04"]
 
 
 Request with arguments 
+
 curl -X GET 'http://localhost:8080/v1/reservations/availability?startDate=2019-09-15&endDate=2019-10-15' -H 'Content-type: application/json'
 
 
 Response 
+
 [
   "2019-09-18",
   "2019-09-19",
@@ -178,9 +189,11 @@ Response
 5) Cancel/Delete the reservation 
 
 Request 
+
 curl -X DELETE 'http://localhost:8080/v1/reservations/1' -H 'Content-type: application/json'
 
 Response 
+
 true
 
 
@@ -188,6 +201,7 @@ true
 6) Update the reservation 
 
 Request 
+
 curl -i -X PUT 'http://localhost:8080/v1/reservations/3' -d '{"name":"Ankur Gupta", "email":"ankurgupta851@gmail.com", "reservationStartDate":"2019-09-09", "reservationEndDate":"2019-09-11"}' -H 'Content-type: application/json'
 
 Response 
