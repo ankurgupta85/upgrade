@@ -36,6 +36,11 @@ How to run the project:
   
 
 
+TODO:
+1) Authentication(token-based) and authorization (permissions) 
+2) Logging the application
+3) Comments in the code 
+4) Test cases ( Automation )
 
 
 
